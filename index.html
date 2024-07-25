@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zach Salad - Mac Salad Recipes Review</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .recipe-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .recipe-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #ff6347;
+        }
+        .recipe-description {
+            margin: 0.5rem 0 1rem 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+        }
+        .star {
+            color: #ffc107;
+            font-size: 1.25rem;
+            margin-right: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zach Salad - Mac Salad Recipes Review</h1>
+    </header>
+    <div class="container">
+        <div id="recipes">
+            <!-- Recipe reviews will be dynamically added here -->
+        </div>
+    </div>
+    <script>
+        const recipes = [
+            { title: "Classic Mac Salad", description: "A delicious classic mac salad with a creamy dressing.", rating: 5 },
+            { title: "Spicy Mac Salad", description: "A mac salad with a spicy kick, perfect for those who love heat.", rating: 4 },
+            { title: "Vegan Mac Salad", description: "A healthy and tasty mac salad for vegans, with a rich, creamy dressing.", rating: 5 },
+            { title: "Italian Mac Salad", description: "A unique twist on mac salad with Italian herbs and a tangy dressing.", rating: 3 }
+        ];
+
+        function displayRecipes() {
+            const recipesContainer = document.getElementById('recipes');
+            recipesContainer.innerHTML = '';
+            recipes.forEach(recipe => {
+                const recipeCard = document.createElement('div');
+                recipeCard.className = 'recipe-card';
+                recipeCard.innerHTML = `
+                    <div class="recipe-title">${recipe.title}</div>
+                    <div class="recipe-description">${recipe.description}</div>
+                    <div class="rating">${'★'.repeat(recipe.rating)}${'☆'.repeat(5 - recipe.rating)}</div>
+                `;
+                recipesContainer.appendChild(recipeCard);
+            });
+        }
+
+        window.onload = displayRecipes;
+    </script>
+</body>
+</html>
