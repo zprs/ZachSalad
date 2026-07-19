@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #f0f0f0; 
+            padding: 20px; 
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        /* @page { size: letter; margin: 1in; }
+html, body { width: 8.5in; height: 11in; } */
+
+        #resume {
+            width: 8.5in !important;
+            height: 11in !important;
+            background: white;
+            padding: .5in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        h1
+        {
+            font-size: 20pt;
+        }
+
+        h2
+        {
+            font-size: 14pt;
+            font-weight: normal;
+        }
+
+        .personalInfo
+        {
+            display: flex; 
+            flex-direction: column; 
+            text-align: end;
+            font-size: 10pt;
+
+        }
+
+        .sectionHeader
+        {
+            border-bottom: 1px solid black;
+            width: 100%;
+            padding-bottom: 2px;
+            font-size: 10.5pt;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .sectionElement
+        {
+            margin-top: 5px;
+        }
+
+        .sectionListElement
+        {
+            font-size: 9.3pt;
+            margin-top: 5px;
+        }
+
+        .sectionListElementTitle
+        {
+            font-weight: bold;
+        }
+
+        .experienceHeader
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 9.3pt;
+        }
+
+        .experienceTitle
+        {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            font-size: 9.3pt;
+        }
+
+        .experiencePosition
+        {
+            font-weight: bold;
+            font-size: 9.3pt;
+        }
+
+        .experiencePosition::after
+        {
+            content: ", ";
+        }
+
+        .experienceDate
+        {
+            font-weight: bold;
+        }
+
+        .experienceBody
+        {
+            margin-left: 25px;
+            font-size: 9.3pt;
+        }
+
+        .experienceDescription
+        {
+            font-size: 9.3pt;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="exportPDF()">Export to PDF</button>
+    
+    <div id="resume">
+
+    <div style="display: flex; flex-direction: row; justify-content: space-between ">
+        <div style="display: flex; flex-direction: column"> 
+            <h1>Zachary Richards</h1>
+            <h2>Scientific Systems Engineer — Full-Stack</h2>
+        </div>
+        <div class="personalInfo">
+            <p>San Diego, CA</p>
+            <p>(760) 846 8402</p>
+            <a href="mailto:zachprichards@gmail.com">zachprichards@gmail.com</a>
+            <a href="https://www.linkedin.com/in/zachary-p-richards/">LinkedIn</a>
+        </div>
+    </div>
+
+
+
+
+    <div class="sectionHeader">
+        Professional Experience 
+    </div>
+
+    <div class="section">
+
+
+        <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">Vertex Pharmaceuticals</div>
+                    <div class="experienceDescription">San Diego CA — Automation Engineer, Discovery Core </div>
+                </div>
+                <div class="experienceDate">
+                    Aug. 2022 – Present
+                </div>
+            </div>
+            <ul class="experienceBody">
+                <li>Managed all Discovery Core software across 50+ source code repositories.</li>
+                <li>Migrated all applications from .NET Framework to a templated .NET Core architecture that abstracts and globalizes core concepts — enabling LLM-assisted development to scale across the team's software portfolio while keeping every solution consistent with a unified architectural vision.</li>
+                
+                <li>Led extensive cleanup and consolidation of disorganized data structures and applications. Continued to deliver custom solutions that streamline processes and evolve the discovery software systems, some examples of which include:</li>
+                
+                <ul style="margin-left: 20px">
+                    <li>Built a comprehensive system for tracking temporal sample lineages of tissues, cells, reagents, and test articles from dissection to assay, representing reality as close as possible and organizing data in an abstract and standard way to enable complex questions to be asked.</li>
+                    <!-- <li>Built a comprehensive system for tracking temporal sample lineages of tissues, cells, reagents, and test articles from dissection through assay, modeled to mirror the real-world process so scientists can ask complex questions of their data.</li> -->
+                    <li>Built a visual microplate template editor and an automatic optimal dose-response intermediate concentration calculation tool. Led to a 10x increase in efficiency of ordering templated compounds.</li><!-- , enabling end-user template submission and reducing manual template creation by ~250 hours annually.-->
+                    <li>Developed an application for processing, managing, and fulfilling hundreds of weekly global compound orders.</li>
+                </ul>
+                
+                <li>Built custom integraftions of off-the-shelf and in-house instrumentation for our in-house developed automation scheduling system.</li>
+                <!-- <li>Designed a platform which standardized architecture. This to make the codebase legible to AI coding agents, enabling LLM-assisted development to reliably scale across the team's entire software portfolio.</li> -->
+
+                <!-- <li>Built a development platform that  -->
+                <li>All work is directly involved with scientists to better their workflows and improve their processes, building systems rather than one off solutions to obstacles.</li>
+
+                <!-- <li>Developed tools to search, view, and edit sample lineages, enabling traversal of the lineage tree to quickly find linked assay data and identify issues.</li> -->
+                <!-- <li>Identified inaccuracies in pre-weighed glassware by creating an application to parse and analyze inconsistencies in millions of reported and actual masses, leading to abandonment of per-weighed glassware purchasing.</li> -->
+                <!-- <li>Created a tool for filtering and analyzing mass-spec data of pooled compounds in microplate wells.</li> -->
+            </ul>
+        </div> 
+
+        <!-- <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">Vertex Pharmaceuticals</div>
+                    <div class="experienceDescription">San Diego CA — Software Developer, Contractor</div>
+                </div>
+                <div class="experienceDate">
+                    Aug. 2022 – Jun. 2024
+                </div>
+            </div>
+            <ul class="experienceBody">
+
+            </ul>
+        </div>  -->
+
+        <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">UCSB Computer Engineering Capstone Project</div>
+                    <div class="experienceDescription">Santa Barbara CA — Student</div>
+                </div>
+                <div class="experienceDate">
+                    Sep. 2023 – Jun. 2024
+                </div>
+            </div>
+            <ul class="experienceBody">
+                <li>Engineered a dynamic LED art installation with custom PCB of the MBTA map in downtown Boston with real-time updates
+for subway, traffic, and weather across 153 stops, along with a companion mobile app for additional features.</li>
+            </ul>
+        </div> 
+<!-- 
+         <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">UCSB Surplus Sales</div>
+                    <div class="experienceDescription">Santa Barbara CA — Student Worker</div>
+                </div>
+                <div class="experienceDate">
+                    Nov. 2021 – Jun. 2022
+                </div>
+            </div>
+            <ul class="experienceBody">
+                <li>Managed and accumulated inventory of items for sale. Priced and sold items to customers.</li>
+                <li>Tested, fixed, and wiped all incoming electronics to get them ready for sale.</li>
+            </ul>
+        </div>  -->
+
+        <!-- <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">Trader Joe’s</div>
+                    <div class="experienceDescription">Encinitas CA — Crew Member</div>
+                </div>
+                <div class="experienceDate">
+                    Sep. 2019 – Dec. 2020
+                </div>
+            </div>
+            <ul class="experienceBody">
+                <li>Collaborated within large team, prioritizing exceptional customer service and fostering positive interactions</li>
+            </ul>
+        </div>  -->
+
+         <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">Senomyx</div>
+                    <div class="experienceDescription">San Diego, CA — Intern</div>
+                </div>
+                <div class="experienceDate">
+                    Jun. 2017 – Aug. 2017
+                </div>
+            </div>
+            <ul class="experienceBody">
+                <li>Wrote, tested, and deployed an ASP.net web application to view and manage barcoded inventory storage locations in an
+Oracle database. Completed and deployed by the end of the 2-month internship.</li>
+            </ul>
+        </div> 
+    </div>
+
+    <div class="sectionHeader">
+        Projects
+    </div>
+    
+    <div class="section">
+        <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">Personal Website Portfolio</div>
+                    <div class="experienceDescription"><a href="https://zacharyrichards.com">zacharyrichards.com</a></div>
+                </div>
+                <!-- <div class="experienceDate">
+                    Jun. 2017 – Aug. 2017
+                </div> -->
+            </div>
+            <ul class="experienceBody">
+                <li>COVID-19 case tracking and prediction web application, various multiplayer web-based games including a Tetris 99
+remake, a midi music creation software, and an original title, space-base.io (defunct), with over 200,000 pageviews.</li>
+            </ul>
+        </div> 
+
+         <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">GitHub Profile</div>
+                    <div class="experienceDescription"><a href="https://github.com/zprs">https://github.com/zprs</a></div>
+                </div>
+                <!-- <div class="experienceDate">
+                    Jun. 2017 – Aug. 2017
+                </div> -->
+            </div>
+            <ul class="experienceBody">
+                <li>Includes repositories for a multi-platform webscraping marketplace search tool, an electron user-friendly music maker application and other fun
+personal projects.</li>
+            </ul>
+        </div> 
+
+        <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">Project Cars</div>
+                    <!-- <div class="experienceDescription"></div> -->
+                </div>
+                <!-- <div class="experienceDate">
+                    Jun. 2017 – Aug. 2017
+                </div> -->
+            </div>
+            <ul class="experienceBody">
+                <li>I own a 1971 Datsun 240z and previously owned a 1990 Honda Civic, 1984 VW Vanagon, and a 1983 Porsche 944, performing extensive mechanical, electrical, and cosmetic work, including 3D modeling and printing of custom parts.
+            </ul>
+        </div> 
+
+    </div>
+
+
+    <div class="sectionHeader">
+        Technical Skills
+    </div>
+    
+    <div class="section">
+        <div class="sectionListElement">
+            <span class="sectionListElementTitle">AI Tooling:</span>
+            Cursor, Claude Code, GitHub Copilot, ChatGPT, OpenAI API
+        </div>
+        <div class="sectionListElement">
+            <span class="sectionListElementTitle">Tools:</span>
+            GitHub, Visual Studio, VS Code, Unix and Windows Shell, SQL Developer, VIM, Wireshark, Adobe Creative Suite, Unity, Unreal Engine, Blender, AWS, IIS, Docker
+        </div>
+        <div class="sectionListElement">
+            <span class="sectionListElementTitle">Languages and Libraries:</span>
+            TypeScript, JavaScript, Python, C#, Java, C, C++, PLSQL, SQL, PostgreSQL, HTML, CSS, .NET, .NET Core, React,
+Node.js, Socket.io
+        </div>
+    </div> 
+
+
+    <div class="sectionHeader">
+        Education
+    </div>
+
+    <div class="section">
+        <div class="sectionElement">
+            <div class="experienceHeader">
+                <div class="experienceTitle">
+                    <div class="experiencePosition">University of California, Santa Barbara (UCSB)</div>
+                </div>
+                <div class="experienceDate">
+                    Graduated Jun. 2024
+                </div>
+            </div>
+            <div class="experienceDescription">Bachelor of Science in Computer Engineering</div>
+        </div>
+
+        
+        <div class="sectionListElement">
+            <span class="sectionListElementTitle">Relevant Coursework:</span>
+            Computer Vision, Artificial Intelligence, Machine Learning, Digital Image Processing, Database Systems,
+Advanced App Programming, Operating Systems, Object Oriented Design, Computer Architecture, Linear Algebra, Differential
+Equations, Multivariable Calculus, Physics Series (4 courses), General Chemistry
+        </div>
+
+    </div>
+
+<!-- 
+    <div class="sectionHeader">
+        References
+    </div>
+
+    <div class="section">
+        <div class="sectionListElement">
+            Available upon request.
+        </div>
+    </div> -->
+
+    <script>
+        function exportPDF() {
+            const element = document.getElementById('resume');
+            html2pdf().set({
+                margin: 0,
+                filename: 'resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: [8.5, 11], orientation: 'portrait' }
+            }).from(element).save();
+        }
+    </script>
+</body>
+</html>
